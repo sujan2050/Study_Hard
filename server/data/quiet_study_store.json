@@ -1,0 +1,912 @@
+{
+  "sources": [
+    {
+      "id": "src_mvz022fk_vfzuxh6",
+      "owner_id": "usr_mvz022fv_pcahtwa",
+      "title": "Guest Physics Note",
+      "raw_text": "Quantum entanglement occurs when pairs of particles interact.",
+      "created_at": "2026-11-02T08:31:15.152Z"
+    },
+    {
+      "id": "src_mvz022fc_tl4rom6",
+      "owner_id": "browser_session_alpha_1793608275144",
+      "title": "Alpha Notes",
+      "raw_text": "Active recall strengthens synapses.",
+      "created_at": "2026-11-02T08:31:15.144Z"
+    },
+    {
+      "id": "src_mvyzk6hg_62es0ed",
+      "owner_id": "usr_mvyzk6hk_jnyylev",
+      "title": "Guest Physics Note",
+      "raw_text": "Quantum entanglement occurs when pairs of particles interact.",
+      "created_at": "2026-11-02T08:17:20.596Z"
+    },
+    {
+      "id": "src_mvyzk6h6_3owy2kf",
+      "owner_id": "browser_session_alpha_1793607440586",
+      "title": "Alpha Notes",
+      "raw_text": "Active recall strengthens synapses.",
+      "created_at": "2026-11-02T08:17:20.586Z"
+    },
+    {
+      "id": "src_mvxutfuu_s52ru0f",
+      "owner_id": "user_mvxukzll_f7s9a4uuxpbe6000",
+      "title": "Neural Networks",
+      "raw_text": "A Neural Network (NN) is a machine learning model inspired by how the human brain works. It learns patterns from data and uses those patterns to make predictions or decisions.\n\nNeural networks are the foundation of many modern AI technologies, including:\n- ChatGPT and Large Language Models (LLMs).\n- Image recognition and object detection.\n- Speech recognition.\n- Self-driving cars.\n- Medical image analysis.\n- Recommendation systems.\nLet's understand them step by step.\n1. What is a Neural Network?\nImagine you want to build an AI model that predicts whether an image contains a cat or a dog.\n\nYou provide thousands of images of cats and dogs to the model.\n\nInitially, the model doesn't know anything. It learns by identifying patterns such as:\n- Ear shape.\n- Eye structure.\n- Body shape.\n- Fur patterns.\nAfter training, when you provide a new image, it predicts whether the image contains a cat or a dog.\n\nThis learning process is performed using a neural network.\n2. Architecture of a Neural Network\nA neural network generally consists of three types of layers:\n\n\n\n\n\n\n\ncloud.tencent.com\n\n\n1. Input Layer\n- Receives input data.\n- Each neuron represents an input feature.\n- Example: Image pixel values, age, salary, temperature, etc.\n2. Hidden Layers\n- Perform computations on the input.\n- Learn patterns and relationships.\n- A neural network can have multiple hidden layers.\n3. Output Layer\n- Produces the final prediction.\n- Example: Cat or Dog.\n- For numerical prediction, it can produce a numerical value.\n3. What is a Neuron?\nA neuron is the basic computational unit of a neural network.\n\nIt receives inputs, multiplies them by weights, adds a bias, and applies an activation function.\n\nThe mathematical representation is:\n\\[\nz = w_1x_1+w_2x_2+\\cdots+w_nx_n+b\n\\]\n\nThen:\n\\[\na=f(z)\n\\]\n\nWhere:\nSymbol\tMeaning\n\\(x\\)\tInput\n\\(w\\)\tWeight\n\\(b\\)\tBias\n\\(z\\)\tWeighted sum\n\\(f\\)\tActivation function\n\\(a\\)\tNeuron output\n\n\n\n\n\n\n\n\nv7labs.com\n\n\nExample:\n\nSuppose we want to predict whether a student will pass based on study hours.\n- Input = 5 hours\n- Weight = 2\n- Bias = 1\nThen:\n\\[\nz=(5\\times2)+1=11\n\\]\n\nThe activation function processes 11 and produces the neuron's output.\n4. What are Weights and Bias?\nThese are two important parameters of neural networks.\n\nWeights:\n\nWeights determine how important an input is when making a prediction.\n\nFor example, when predicting student performance:\n- Study hours might have a high positive weight.\n- Attendance might also have a positive weight.\n- Unnecessary features might have very small weights.\nBias:\n\nBias allows the neuron to shift its output independently of the input values.\n\nThink of weights as controlling the influence of inputs and bias as adjusting the overall output.\n5. Activation Functions\nAn activation function introduces non-linearity into a neural network.\n\nWithout activation functions, even a network with many layers would behave like a single linear transformation.\n\nSome important activation functions:\n\n\n\n\n\n\n\n\n\n1. ReLU (Rectified Linear Unit)\n\\[\nf(x)=\\max(0,x)\n\\]\n\n- Negative values become zero.\n- Positive values remain unchanged.\n- Commonly used in hidden layers.\n\n\n\n\n\n\n\n\n\n\n\n2. Sigmoid\n\\[\nf(x)=\\frac{1}{1+e^{-x}}\n\\]\n\n- Output ranges between 0 and 1.\n- Useful for binary classification output.\n\n\n\n\n\n\n\n\n\n\n\n\n3. Tanh\n- Output ranges between -1 and 1.\n- Often used in older neural network architectures and some recurrent networks.\n\n\n\n\n\n\n\n\n\n\n\n\n4. Softmax\n- Converts output scores into probabilities.\n- Commonly used for multiclass classification.\n\n\n\n6. How Does a Neural Network Learn?\nThis is one of the most important concepts.\n\nNeural networks generally learn through the following process:\n\n\n\n\n\n\n\nwasilzafar.com\n\n\nStep 1: Forward Propagation\n\nInput data passes through the network, and the model generates a prediction.\n\nExample:\n\nActual answer: Cat\n\nPredicted answer: Dog\n\nStep 2: Calculate Loss\n\nThe model calculates how far its prediction is from the actual answer.\n\nA loss function measures the prediction error.\n\nSome common loss functions:\n- Mean Squared Error (MSE).\n- Binary Cross Entropy.\n- Categorical Cross Entropy.\nStep 3: Backpropagation\n\nThe network calculates how much each weight contributed to the prediction error.\n\nIt calculates gradients using the chain rule of calculus.\n\nStep 4: Update Weights\n\nAn optimization algorithm such as Gradient Descent updates the weights to reduce the loss.\n\\[\nw_{\\text{new}}=w_{\\text{old}}-\\alpha\\frac{\\partial L}{\\partial w}\n\\]\n\nHere:\n- \\(L\\) = Loss.\n- \\(\\alpha\\) = Learning rate.\n- \\(\\frac{\\partial L}{\\partial w}\\) = Gradient of loss with respect to weight.\nThese steps repeat across many training examples until the model learns useful patterns.\n7. Types of Neural Networks\nDifferent neural network architectures are designed for different problems.\n\n\n\n\n\n1. Feedforward Neural Network (FNN)\n\nInformation moves from input to output without loops.\n\nApplications: Basic classification and regression.\n\n\n\n\n\n\n\n\n2. Convolutional Neural Network (CNN)\n\nDesigned primarily for image and spatial data.\n\nApplications: Object detection, face recognition, brain tumor detection.\n\n\n\n\n\n\n\n\n3. Recurrent Neural Network (RNN)\n\nUses information from previous steps in a sequence.\n\nApplications: Time-series forecasting and sequential data.\n\n\n\n\n\n\n\n\n4. LSTM (Long Short-Term Memory)\n\nA special type of RNN designed to capture long-term dependencies.\n\nApplications: Sequence modelling and time-series prediction.\n\n\n\n\n\n\n\n\n5. Transformers\n\nUse attention mechanisms to understand relationships between different parts of input sequences.\n\nApplications: ChatGPT, language translation, text generation and multimodal AI.\n\n\n\n8. Neural Networks vs Deep Learning\nThese two terms are closely related.\nNeural Networks\tDeep Learning\nModels inspired by biological neurons\tUses neural networks with multiple layers\nCan have one or more hidden layers\tUsually has many layers\nCan solve simpler problems\tCan learn complex patterns\nMay require less computational power\tOften requires more computational power\n\nImportant: Deep learning is a subset of machine learning, and neural networks are its primary building blocks.\n\n\n\n\n\n9. Libraries Used to Build Neural Networks\nIf you want to implement neural networks, these are important libraries:\nLibrary\tPurpose\nNumPy\tMathematical operations\nTensorFlow\tBuilding and training neural networks\nPyTorch\tBuilding and training deep learning models\nKeras\tHigh-level neural network API\nScikit-learn\tTraditional machine learning\n\nI recommend learning PyTorch for implementing neural networks and understanding how they work internally.\n\n10. What Should You Learn Next?\nFor a strong foundation in AI/ML engineering, I recommend following this sequence:\n1. Neural Network fundamentals\n2. Perceptron and Multi-Layer Perceptron (MLP)\n3. Forward Propagation (numerical examples)\n4. Loss Functions\n5. Gradient Descent and Optimization\n6. Backpropagation (mathematical understanding)\n7. Overfitting, Underfitting and Regularization\n8. Implement an MLP using PyTorch\n9. CNN, RNN, LSTM and Transformers\nMy recommendation: Don't jump directly into CNNs or Transformers. First understand how a single neuron works, how weights are updated, and how backpropagation works. These concepts will make advanced architectures much easier.\n\n",
+      "created_at": "2026-11-01T13:16:48.390Z"
+    },
+    {
+      "id": "src_mvxutbst_koyd61c",
+      "owner_id": "user_mvxukzll_f7s9a4uuxpbe6000",
+      "title": "Neural Networks",
+      "raw_text": "A Neural Network (NN) is a machine learning model inspired by how the human brain works. It learns patterns from data and uses those patterns to make predictions or decisions.\n\nNeural networks are the foundation of many modern AI technologies, including:\n- ChatGPT and Large Language Models (LLMs).\n- Image recognition and object detection.\n- Speech recognition.\n- Self-driving cars.\n- Medical image analysis.\n- Recommendation systems.\nLet's understand them step by step.\n1. What is a Neural Network?\nImagine you want to build an AI model that predicts whether an image contains a cat or a dog.\n\nYou provide thousands of images of cats and dogs to the model.\n\nInitially, the model doesn't know anything. It learns by identifying patterns such as:\n- Ear shape.\n- Eye structure.\n- Body shape.\n- Fur patterns.\nAfter training, when you provide a new image, it predicts whether the image contains a cat or a dog.\n\nThis learning process is performed using a neural network.\n2. Architecture of a Neural Network\nA neural network generally consists of three types of layers:\n\n\n\n\n\n\n\ncloud.tencent.com\n\n\n1. Input Layer\n- Receives input data.\n- Each neuron represents an input feature.\n- Example: Image pixel values, age, salary, temperature, etc.\n2. Hidden Layers\n- Perform computations on the input.\n- Learn patterns and relationships.\n- A neural network can have multiple hidden layers.\n3. Output Layer\n- Produces the final prediction.\n- Example: Cat or Dog.\n- For numerical prediction, it can produce a numerical value.\n3. What is a Neuron?\nA neuron is the basic computational unit of a neural network.\n\nIt receives inputs, multiplies them by weights, adds a bias, and applies an activation function.\n\nThe mathematical representation is:\n\\[\nz = w_1x_1+w_2x_2+\\cdots+w_nx_n+b\n\\]\n\nThen:\n\\[\na=f(z)\n\\]\n\nWhere:\nSymbol\tMeaning\n\\(x\\)\tInput\n\\(w\\)\tWeight\n\\(b\\)\tBias\n\\(z\\)\tWeighted sum\n\\(f\\)\tActivation function\n\\(a\\)\tNeuron output\n\n\n\n\n\n\n\n\nv7labs.com\n\n\nExample:\n\nSuppose we want to predict whether a student will pass based on study hours.\n- Input = 5 hours\n- Weight = 2\n- Bias = 1\nThen:\n\\[\nz=(5\\times2)+1=11\n\\]\n\nThe activation function processes 11 and produces the neuron's output.\n4. What are Weights and Bias?\nThese are two important parameters of neural networks.\n\nWeights:\n\nWeights determine how important an input is when making a prediction.\n\nFor example, when predicting student performance:\n- Study hours might have a high positive weight.\n- Attendance might also have a positive weight.\n- Unnecessary features might have very small weights.\nBias:\n\nBias allows the neuron to shift its output independently of the input values.\n\nThink of weights as controlling the influence of inputs and bias as adjusting the overall output.\n5. Activation Functions\nAn activation function introduces non-linearity into a neural network.\n\nWithout activation functions, even a network with many layers would behave like a single linear transformation.\n\nSome important activation functions:\n\n\n\n\n\n\n\n\n\n1. ReLU (Rectified Linear Unit)\n\\[\nf(x)=\\max(0,x)\n\\]\n\n- Negative values become zero.\n- Positive values remain unchanged.\n- Commonly used in hidden layers.\n\n\n\n\n\n\n\n\n\n\n\n2. Sigmoid\n\\[\nf(x)=\\frac{1}{1+e^{-x}}\n\\]\n\n- Output ranges between 0 and 1.\n- Useful for binary classification output.\n\n\n\n\n\n\n\n\n\n\n\n\n3. Tanh\n- Output ranges between -1 and 1.\n- Often used in older neural network architectures and some recurrent networks.\n\n\n\n\n\n\n\n\n\n\n\n\n4. Softmax\n- Converts output scores into probabilities.\n- Commonly used for multiclass classification.\n\n\n\n6. How Does a Neural Network Learn?\nThis is one of the most important concepts.\n\nNeural networks generally learn through the following process:\n\n\n\n\n\n\n\nwasilzafar.com\n\n\nStep 1: Forward Propagation\n\nInput data passes through the network, and the model generates a prediction.\n\nExample:\n\nActual answer: Cat\n\nPredicted answer: Dog\n\nStep 2: Calculate Loss\n\nThe model calculates how far its prediction is from the actual answer.\n\nA loss function measures the prediction error.\n\nSome common loss functions:\n- Mean Squared Error (MSE).\n- Binary Cross Entropy.\n- Categorical Cross Entropy.\nStep 3: Backpropagation\n\nThe network calculates how much each weight contributed to the prediction error.\n\nIt calculates gradients using the chain rule of calculus.\n\nStep 4: Update Weights\n\nAn optimization algorithm such as Gradient Descent updates the weights to reduce the loss.\n\\[\nw_{\\text{new}}=w_{\\text{old}}-\\alpha\\frac{\\partial L}{\\partial w}\n\\]\n\nHere:\n- \\(L\\) = Loss.\n- \\(\\alpha\\) = Learning rate.\n- \\(\\frac{\\partial L}{\\partial w}\\) = Gradient of loss with respect to weight.\nThese steps repeat across many training examples until the model learns useful patterns.\n7. Types of Neural Networks\nDifferent neural network architectures are designed for different problems.\n\n\n\n\n\n1. Feedforward Neural Network (FNN)\n\nInformation moves from input to output without loops.\n\nApplications: Basic classification and regression.\n\n\n\n\n\n\n\n\n2. Convolutional Neural Network (CNN)\n\nDesigned primarily for image and spatial data.\n\nApplications: Object detection, face recognition, brain tumor detection.\n\n\n\n\n\n\n\n\n3. Recurrent Neural Network (RNN)\n\nUses information from previous steps in a sequence.\n\nApplications: Time-series forecasting and sequential data.\n\n\n\n\n\n\n\n\n4. LSTM (Long Short-Term Memory)\n\nA special type of RNN designed to capture long-term dependencies.\n\nApplications: Sequence modelling and time-series prediction.\n\n\n\n\n\n\n\n\n5. Transformers\n\nUse attention mechanisms to understand relationships between different parts of input sequences.\n\nApplications: ChatGPT, language translation, text generation and multimodal AI.\n\n\n\n8. Neural Networks vs Deep Learning\nThese two terms are closely related.\nNeural Networks\tDeep Learning\nModels inspired by biological neurons\tUses neural networks with multiple layers\nCan have one or more hidden layers\tUsually has many layers\nCan solve simpler problems\tCan learn complex patterns\nMay require less computational power\tOften requires more computational power\n\nImportant: Deep learning is a subset of machine learning, and neural networks are its primary building blocks.\n\n\n\n\n\n9. Libraries Used to Build Neural Networks\nIf you want to implement neural networks, these are important libraries:\nLibrary\tPurpose\nNumPy\tMathematical operations\nTensorFlow\tBuilding and training neural networks\nPyTorch\tBuilding and training deep learning models\nKeras\tHigh-level neural network API\nScikit-learn\tTraditional machine learning\n\nI recommend learning PyTorch for implementing neural networks and understanding how they work internally.\n\n10. What Should You Learn Next?\nFor a strong foundation in AI/ML engineering, I recommend following this sequence:\n1. Neural Network fundamentals\n2. Perceptron and Multi-Layer Perceptron (MLP)\n3. Forward Propagation (numerical examples)\n4. Loss Functions\n5. Gradient Descent and Optimization\n6. Backpropagation (mathematical understanding)\n7. Overfitting, Underfitting and Regularization\n8. Implement an MLP using PyTorch\n9. CNN, RNN, LSTM and Transformers\nMy recommendation: Don't jump directly into CNNs or Transformers. First understand how a single neuron works, how weights are updated, and how backpropagation works. These concepts will make advanced architectures much easier.\n\n",
+      "created_at": "2026-11-01T13:16:43.133Z"
+    },
+    {
+      "id": "src_mvxuk3oa_3lihn64",
+      "owner_id": "browser_session_alpha_1793538572698",
+      "title": "Alpha Notes",
+      "raw_text": "Active recall strengthens synapses.",
+      "created_at": "2026-11-01T13:09:32.698Z"
+    },
+    {
+      "id": "src_mvxufbid_88bf67n",
+      "owner_id": "test_owner_suite_1",
+      "title": "Cognitive Science Test Note",
+      "raw_text": "Active recall is a learning principle where the learner deliberately retrieves information from memory rather than passively re-reading it. When a concept is actively retrieved, the neural pathways associated with that memory trace are reinforced through synaptic plasticity.\n\nThe forgetting curve demonstrates that humans halve their memory of newly learned knowledge within a matter of days unless the material is deliberately reviewed. Without conscious rehearsal, memory retention drops exponentially along a mathematical decay curve.",
+      "created_at": "2026-11-01T13:05:49.573Z"
+    }
+  ],
+  "passages": [
+    {
+      "id": "psg_mvxufbif_zqs3plg",
+      "source_id": "src_mvxufbid_88bf67n",
+      "position": 1,
+      "text": "Active recall is a learning principle where the learner deliberately retrieves information from memory rather than passively re-reading it. When a concept is actively retrieved, the neural pathways associated with that memory trace are reinforced through synaptic plasticity."
+    },
+    {
+      "id": "psg_mvxufbif_x7eqsna",
+      "source_id": "src_mvxufbid_88bf67n",
+      "position": 2,
+      "text": "The forgetting curve demonstrates that humans halve their memory of newly learned knowledge within a matter of days unless the material is deliberately reviewed. Without conscious rehearsal, memory retention drops exponentially along a mathematical decay curve."
+    },
+    {
+      "id": "psg_mvxuk3od_uyu8tdo",
+      "source_id": "src_mvxuk3oa_3lihn64",
+      "position": 1,
+      "text": "Active recall strengthens synapses."
+    },
+    {
+      "id": "psg_mvxutbsx_7lgdnhv",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 1,
+      "text": "A Neural Network (NN) is a machine learning model inspired by how the human brain works. It learns patterns from data and uses those patterns to make predictions or decisions."
+    },
+    {
+      "id": "psg_mvxutbsx_41n4muw",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 2,
+      "text": "Neural networks are the foundation of many modern AI technologies, including:\n- ChatGPT and Large Language Models (LLMs).\n- Image recognition and object detection.\n- Speech recognition.\n- Self-driving cars.\n- Medical image analysis.\n- Recommendation systems. Let's understand them step by step. 1. What is a Neural Network? Imagine you want to build an AI model that predicts whether an image contains a cat or a dog."
+    },
+    {
+      "id": "psg_mvxutbsx_f7rvcov",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 3,
+      "text": "You provide thousands of images of cats and dogs to the model."
+    },
+    {
+      "id": "psg_mvxutbsx_987snd2",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 4,
+      "text": "Initially, the model doesn't know anything. It learns by identifying patterns such as:\n- Ear shape.\n- Eye structure.\n- Body shape.\n- Fur patterns. After training, when you provide a new image, it predicts whether the image contains a cat or a dog."
+    },
+    {
+      "id": "psg_mvxutbsx_vjg8hcf",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 5,
+      "text": "This learning process is performed using a neural network. 2. Architecture of a Neural Network\nA neural network generally consists of three types of layers:"
+    },
+    {
+      "id": "psg_mvxutbsx_o75dsm0",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 6,
+      "text": "cloud.tencent.com 1. Input Layer\n- Receives input data.\n- Each neuron represents an input feature.\n- Example: Image pixel values, age, salary, temperature, etc. 2. Hidden Layers\n- Perform computations on the input.\n- Learn patterns and relationships.\n- A neural network can have multiple hidden layers."
+    },
+    {
+      "id": "psg_mvxutbsx_77dc88k",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 7,
+      "text": "3. Output Layer\n- Produces the final prediction.\n- Example: Cat or Dog.\n- For numerical prediction, it can produce a numerical value. 3. What is a Neuron? A neuron is the basic computational unit of a neural network."
+    },
+    {
+      "id": "psg_mvxutbsx_vmetjr1",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 8,
+      "text": "It receives inputs, multiplies them by weights, adds a bias, and applies an activation function."
+    },
+    {
+      "id": "psg_mvxutbsx_avl1ppw",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 9,
+      "text": "The mathematical representation is:\n\\[\nz = w_1x_1+w_2x_2+\\cdots+w_nx_n+b\n\\]"
+    },
+    {
+      "id": "psg_mvxutbsx_3h84dy3",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 10,
+      "text": "Then:\n\\[\na=f(z)\n\\] Where:\nSymbol\tMeaning\n\\(x\\)\tInput\n\\(w\\)\tWeight\n\\(b\\)\tBias\n\\(z\\)\tWeighted sum\n\\(f\\)\tActivation function\n\\(a\\)\tNeuron output"
+    },
+    {
+      "id": "psg_mvxutbsx_fbrtl49",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 11,
+      "text": "v7labs.com Example: Suppose we want to predict whether a student will pass based on study hours.\n- Input = 5 hours\n- Weight = 2\n- Bias = 1\nThen:\n\\[\nz=(5\\times2)+1=11\n\\]"
+    },
+    {
+      "id": "psg_mvxutbsx_4zkpyip",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 12,
+      "text": "The activation function processes 11 and produces the neuron's output. 4. What are Weights and Bias? These are two important parameters of neural networks."
+    },
+    {
+      "id": "psg_mvxutbsx_ibzsw61",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 13,
+      "text": "Weights: Weights determine how important an input is when making a prediction."
+    },
+    {
+      "id": "psg_mvxutbsx_othlg93",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 14,
+      "text": "For example, when predicting student performance:\n- Study hours might have a high positive weight.\n- Attendance might also have a positive weight.\n- Unnecessary features might have very small weights. Bias:"
+    },
+    {
+      "id": "psg_mvxutbsx_th86043",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 15,
+      "text": "Bias allows the neuron to shift its output independently of the input values."
+    },
+    {
+      "id": "psg_mvxutbsx_btw9l4l",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 16,
+      "text": "Think of weights as controlling the influence of inputs and bias as adjusting the overall output. 5. Activation Functions\nAn activation function introduces non-linearity into a neural network."
+    },
+    {
+      "id": "psg_mvxutbsx_w3el5xs",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 17,
+      "text": "Without activation functions, even a network with many layers would behave like a single linear transformation."
+    },
+    {
+      "id": "psg_mvxutbsx_qj8spu6",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 18,
+      "text": "Some important activation functions: 1. ReLU (Rectified Linear Unit)\n\\[\nf(x)=\\max(0,x)\n\\]"
+    },
+    {
+      "id": "psg_mvxutbsx_t9g4d08",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 19,
+      "text": "- Negative values become zero.\n- Positive values remain unchanged.\n- Commonly used in hidden layers."
+    },
+    {
+      "id": "psg_mvxutbsx_yrony12",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 20,
+      "text": "2. Sigmoid\n\\[\nf(x)=\\frac{1}{1+e^{-x}}\n\\] - Output ranges between 0 and 1.\n- Useful for binary classification output."
+    },
+    {
+      "id": "psg_mvxutbsx_jyh3qyj",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 21,
+      "text": "3. Tanh\n- Output ranges between -1 and 1.\n- Often used in older neural network architectures and some recurrent networks."
+    },
+    {
+      "id": "psg_mvxutbsx_o8q7uxu",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 22,
+      "text": "4. Softmax\n- Converts output scores into probabilities.\n- Commonly used for multiclass classification."
+    },
+    {
+      "id": "psg_mvxutbsx_43838zw",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 23,
+      "text": "6. How Does a Neural Network Learn? This is one of the most important concepts."
+    },
+    {
+      "id": "psg_mvxutbsx_m09j3zy",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 24,
+      "text": "Neural networks generally learn through the following process:"
+    },
+    {
+      "id": "psg_mvxutbsx_xqp1ub1",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 25,
+      "text": "wasilzafar.com Step 1: Forward Propagation Input data passes through the network, and the model generates a prediction."
+    },
+    {
+      "id": "psg_mvxutbsx_xo3xaok",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 26,
+      "text": "Example: Actual answer: Cat Predicted answer: Dog Step 2: Calculate Loss"
+    },
+    {
+      "id": "psg_mvxutbsx_42dol8u",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 27,
+      "text": "The model calculates how far its prediction is from the actual answer."
+    },
+    {
+      "id": "psg_mvxutbsx_zhtz21f",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 28,
+      "text": "A loss function measures the prediction error. Some common loss functions:\n- Mean Squared Error (MSE).\n- Binary Cross Entropy.\n- Categorical Cross Entropy. Step 3: Backpropagation"
+    },
+    {
+      "id": "psg_mvxutbsx_95mdxzb",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 29,
+      "text": "The network calculates how much each weight contributed to the prediction error."
+    },
+    {
+      "id": "psg_mvxutbsx_y5xuatc",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 30,
+      "text": "It calculates gradients using the chain rule of calculus."
+    },
+    {
+      "id": "psg_mvxutbsx_onfnesk",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 31,
+      "text": "Step 4: Update Weights An optimization algorithm such as Gradient Descent updates the weights to reduce the loss.\n\\[\nw_{\\text{new}}=w_{\\text{old}}-\\alpha\\frac{\\partial L}{\\partial w}\n\\]"
+    },
+    {
+      "id": "psg_mvxutbsx_jdf6lux",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 32,
+      "text": "Here:\n- \\(L\\) = Loss.\n- \\(\\alpha\\) = Learning rate.\n- \\(\\frac{\\partial L}{\\partial w}\\) = Gradient of loss with respect to weight. These steps repeat across many training examples until the model learns useful patterns. 7. Types of Neural Networks\nDifferent neural network architectures are designed for different problems."
+    },
+    {
+      "id": "psg_mvxutbsx_8ndg5xh",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 33,
+      "text": "1. Feedforward Neural Network (FNN) Information moves from input to output without loops."
+    },
+    {
+      "id": "psg_mvxutbsx_sqmd891",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 34,
+      "text": "Applications: Basic classification and regression."
+    },
+    {
+      "id": "psg_mvxutbsx_do66j8s",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 35,
+      "text": "2. Convolutional Neural Network (CNN) Designed primarily for image and spatial data."
+    },
+    {
+      "id": "psg_mvxutbsx_0y8zlis",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 36,
+      "text": "Applications: Object detection, face recognition, brain tumor detection."
+    },
+    {
+      "id": "psg_mvxutbsx_iy56oo6",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 37,
+      "text": "3. Recurrent Neural Network (RNN) Uses information from previous steps in a sequence."
+    },
+    {
+      "id": "psg_mvxutbsx_u1n3qeo",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 38,
+      "text": "Applications: Time-series forecasting and sequential data."
+    },
+    {
+      "id": "psg_mvxutbsx_98kcxnu",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 39,
+      "text": "4. LSTM (Long Short-Term Memory) A special type of RNN designed to capture long-term dependencies."
+    },
+    {
+      "id": "psg_mvxutbsx_peyq1zh",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 40,
+      "text": "Applications: Sequence modelling and time-series prediction."
+    },
+    {
+      "id": "psg_mvxutbsx_f4y4w1r",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 41,
+      "text": "5. Transformers Use attention mechanisms to understand relationships between different parts of input sequences."
+    },
+    {
+      "id": "psg_mvxutbsx_4x2zg1b",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 42,
+      "text": "Applications: ChatGPT, language translation, text generation and multimodal AI."
+    },
+    {
+      "id": "psg_mvxutbsx_gjqqv15",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 43,
+      "text": "8. Neural Networks vs Deep Learning\nThese two terms are closely related. Neural Networks\tDeep Learning\nModels inspired by biological neurons\tUses neural networks with multiple layers\nCan have one or more hidden layers\tUsually has many layers\nCan solve simpler problems\tCan learn complex patterns\nMay require less computational power\tOften requires more computational power"
+    },
+    {
+      "id": "psg_mvxutbsx_uixig6r",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 44,
+      "text": "Important: Deep learning is a subset of machine learning, and neural networks are its primary building blocks."
+    },
+    {
+      "id": "psg_mvxutbsx_8srur1r",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 45,
+      "text": "9. Libraries Used to Build Neural Networks\nIf you want to implement neural networks, these are important libraries:\nLibrary\tPurpose\nNumPy\tMathematical operations\nTensorFlow\tBuilding and training neural networks\nPyTorch\tBuilding and training deep learning models\nKeras\tHigh-level neural network API\nScikit-learn\tTraditional machine learning"
+    },
+    {
+      "id": "psg_mvxutbsx_56iqsmj",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 46,
+      "text": "I recommend learning PyTorch for implementing neural networks and understanding how they work internally."
+    },
+    {
+      "id": "psg_mvxutbsx_ipalwbq",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 47,
+      "text": "10. What Should You Learn Next? For a strong foundation in AI/ML engineering, I recommend following this sequence:\n1. Neural Network fundamentals\n2."
+    },
+    {
+      "id": "psg_mvxutbsx_r5ny5ng",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 48,
+      "text": "Perceptron and Multi-Layer Perceptron (MLP)\n3. Forward Propagation (numerical examples)\n4. Loss Functions\n5. Gradient Descent and Optimization\n6."
+    },
+    {
+      "id": "psg_mvxutbsx_yjg8bpm",
+      "source_id": "src_mvxutbst_koyd61c",
+      "position": 49,
+      "text": "Backpropagation (mathematical understanding)\n7. Overfitting, Underfitting and Regularization\n8. Implement an MLP using PyTorch\n9. CNN, RNN, LSTM and Transformers\nMy recommendation: Don't jump directly into CNNs or Transformers. First understand how a single neuron works, how weights are updated, and how backpropagation works. These concepts will make advanced architectures much easier."
+    },
+    {
+      "id": "psg_mvxutfuy_nmydq2a",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 1,
+      "text": "A Neural Network (NN) is a machine learning model inspired by how the human brain works. It learns patterns from data and uses those patterns to make predictions or decisions."
+    },
+    {
+      "id": "psg_mvxutfuy_blxvyf6",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 2,
+      "text": "Neural networks are the foundation of many modern AI technologies, including:\n- ChatGPT and Large Language Models (LLMs).\n- Image recognition and object detection.\n- Speech recognition.\n- Self-driving cars.\n- Medical image analysis.\n- Recommendation systems. Let's understand them step by step. 1. What is a Neural Network? Imagine you want to build an AI model that predicts whether an image contains a cat or a dog."
+    },
+    {
+      "id": "psg_mvxutfuy_w5rnd6a",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 3,
+      "text": "You provide thousands of images of cats and dogs to the model."
+    },
+    {
+      "id": "psg_mvxutfuy_t4ko843",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 4,
+      "text": "Initially, the model doesn't know anything. It learns by identifying patterns such as:\n- Ear shape.\n- Eye structure.\n- Body shape.\n- Fur patterns. After training, when you provide a new image, it predicts whether the image contains a cat or a dog."
+    },
+    {
+      "id": "psg_mvxutfuy_8fo1w5i",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 5,
+      "text": "This learning process is performed using a neural network. 2. Architecture of a Neural Network\nA neural network generally consists of three types of layers:"
+    },
+    {
+      "id": "psg_mvxutfuy_3ml42f1",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 6,
+      "text": "cloud.tencent.com 1. Input Layer\n- Receives input data.\n- Each neuron represents an input feature.\n- Example: Image pixel values, age, salary, temperature, etc. 2. Hidden Layers\n- Perform computations on the input.\n- Learn patterns and relationships.\n- A neural network can have multiple hidden layers."
+    },
+    {
+      "id": "psg_mvxutfuy_aawcu52",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 7,
+      "text": "3. Output Layer\n- Produces the final prediction.\n- Example: Cat or Dog.\n- For numerical prediction, it can produce a numerical value. 3. What is a Neuron? A neuron is the basic computational unit of a neural network."
+    },
+    {
+      "id": "psg_mvxutfuy_2j88an8",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 8,
+      "text": "It receives inputs, multiplies them by weights, adds a bias, and applies an activation function."
+    },
+    {
+      "id": "psg_mvxutfuy_4dhegzn",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 9,
+      "text": "The mathematical representation is:\n\\[\nz = w_1x_1+w_2x_2+\\cdots+w_nx_n+b\n\\]"
+    },
+    {
+      "id": "psg_mvxutfuy_p2l0hca",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 10,
+      "text": "Then:\n\\[\na=f(z)\n\\] Where:\nSymbol\tMeaning\n\\(x\\)\tInput\n\\(w\\)\tWeight\n\\(b\\)\tBias\n\\(z\\)\tWeighted sum\n\\(f\\)\tActivation function\n\\(a\\)\tNeuron output"
+    },
+    {
+      "id": "psg_mvxutfuy_07jnkbt",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 11,
+      "text": "v7labs.com Example: Suppose we want to predict whether a student will pass based on study hours.\n- Input = 5 hours\n- Weight = 2\n- Bias = 1\nThen:\n\\[\nz=(5\\times2)+1=11\n\\]"
+    },
+    {
+      "id": "psg_mvxutfuy_qzy5qgv",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 12,
+      "text": "The activation function processes 11 and produces the neuron's output. 4. What are Weights and Bias? These are two important parameters of neural networks."
+    },
+    {
+      "id": "psg_mvxutfuy_3n7cprn",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 13,
+      "text": "Weights: Weights determine how important an input is when making a prediction."
+    },
+    {
+      "id": "psg_mvxutfuy_4w6m1b9",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 14,
+      "text": "For example, when predicting student performance:\n- Study hours might have a high positive weight.\n- Attendance might also have a positive weight.\n- Unnecessary features might have very small weights. Bias:"
+    },
+    {
+      "id": "psg_mvxutfuy_mfta4rm",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 15,
+      "text": "Bias allows the neuron to shift its output independently of the input values."
+    },
+    {
+      "id": "psg_mvxutfuy_satixgc",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 16,
+      "text": "Think of weights as controlling the influence of inputs and bias as adjusting the overall output. 5. Activation Functions\nAn activation function introduces non-linearity into a neural network."
+    },
+    {
+      "id": "psg_mvxutfuy_fy4n1uu",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 17,
+      "text": "Without activation functions, even a network with many layers would behave like a single linear transformation."
+    },
+    {
+      "id": "psg_mvxutfuy_cdvtc3n",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 18,
+      "text": "Some important activation functions: 1. ReLU (Rectified Linear Unit)\n\\[\nf(x)=\\max(0,x)\n\\]"
+    },
+    {
+      "id": "psg_mvxutfuy_q713rpl",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 19,
+      "text": "- Negative values become zero.\n- Positive values remain unchanged.\n- Commonly used in hidden layers."
+    },
+    {
+      "id": "psg_mvxutfuy_n4c6ph6",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 20,
+      "text": "2. Sigmoid\n\\[\nf(x)=\\frac{1}{1+e^{-x}}\n\\] - Output ranges between 0 and 1.\n- Useful for binary classification output."
+    },
+    {
+      "id": "psg_mvxutfuy_mruryds",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 21,
+      "text": "3. Tanh\n- Output ranges between -1 and 1.\n- Often used in older neural network architectures and some recurrent networks."
+    },
+    {
+      "id": "psg_mvxutfuy_fvgqm9e",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 22,
+      "text": "4. Softmax\n- Converts output scores into probabilities.\n- Commonly used for multiclass classification."
+    },
+    {
+      "id": "psg_mvxutfuy_rsb0e3e",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 23,
+      "text": "6. How Does a Neural Network Learn? This is one of the most important concepts."
+    },
+    {
+      "id": "psg_mvxutfuy_5e5ape6",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 24,
+      "text": "Neural networks generally learn through the following process:"
+    },
+    {
+      "id": "psg_mvxutfuy_bg4gybc",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 25,
+      "text": "wasilzafar.com Step 1: Forward Propagation Input data passes through the network, and the model generates a prediction."
+    },
+    {
+      "id": "psg_mvxutfuy_0lxbxu0",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 26,
+      "text": "Example: Actual answer: Cat Predicted answer: Dog Step 2: Calculate Loss"
+    },
+    {
+      "id": "psg_mvxutfuy_zk6lm2i",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 27,
+      "text": "The model calculates how far its prediction is from the actual answer."
+    },
+    {
+      "id": "psg_mvxutfuy_bfa7img",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 28,
+      "text": "A loss function measures the prediction error. Some common loss functions:\n- Mean Squared Error (MSE).\n- Binary Cross Entropy.\n- Categorical Cross Entropy. Step 3: Backpropagation"
+    },
+    {
+      "id": "psg_mvxutfuy_0g514mo",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 29,
+      "text": "The network calculates how much each weight contributed to the prediction error."
+    },
+    {
+      "id": "psg_mvxutfuy_5z1jmmh",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 30,
+      "text": "It calculates gradients using the chain rule of calculus."
+    },
+    {
+      "id": "psg_mvxutfuy_lrzf40w",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 31,
+      "text": "Step 4: Update Weights An optimization algorithm such as Gradient Descent updates the weights to reduce the loss.\n\\[\nw_{\\text{new}}=w_{\\text{old}}-\\alpha\\frac{\\partial L}{\\partial w}\n\\]"
+    },
+    {
+      "id": "psg_mvxutfuy_fv6ova5",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 32,
+      "text": "Here:\n- \\(L\\) = Loss.\n- \\(\\alpha\\) = Learning rate.\n- \\(\\frac{\\partial L}{\\partial w}\\) = Gradient of loss with respect to weight. These steps repeat across many training examples until the model learns useful patterns. 7. Types of Neural Networks\nDifferent neural network architectures are designed for different problems."
+    },
+    {
+      "id": "psg_mvxutfuy_600rpqr",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 33,
+      "text": "1. Feedforward Neural Network (FNN) Information moves from input to output without loops."
+    },
+    {
+      "id": "psg_mvxutfuy_tx1kgfw",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 34,
+      "text": "Applications: Basic classification and regression."
+    },
+    {
+      "id": "psg_mvxutfuy_5uoaimx",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 35,
+      "text": "2. Convolutional Neural Network (CNN) Designed primarily for image and spatial data."
+    },
+    {
+      "id": "psg_mvxutfuy_ts4dzk0",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 36,
+      "text": "Applications: Object detection, face recognition, brain tumor detection."
+    },
+    {
+      "id": "psg_mvxutfuy_jxxvq7y",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 37,
+      "text": "3. Recurrent Neural Network (RNN) Uses information from previous steps in a sequence."
+    },
+    {
+      "id": "psg_mvxutfuy_kfzszi7",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 38,
+      "text": "Applications: Time-series forecasting and sequential data."
+    },
+    {
+      "id": "psg_mvxutfuy_009ttko",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 39,
+      "text": "4. LSTM (Long Short-Term Memory) A special type of RNN designed to capture long-term dependencies."
+    },
+    {
+      "id": "psg_mvxutfuy_bscu8v9",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 40,
+      "text": "Applications: Sequence modelling and time-series prediction."
+    },
+    {
+      "id": "psg_mvxutfuy_gh9jmfa",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 41,
+      "text": "5. Transformers Use attention mechanisms to understand relationships between different parts of input sequences."
+    },
+    {
+      "id": "psg_mvxutfuy_f8qjk9t",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 42,
+      "text": "Applications: ChatGPT, language translation, text generation and multimodal AI."
+    },
+    {
+      "id": "psg_mvxutfuy_wb50e2m",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 43,
+      "text": "8. Neural Networks vs Deep Learning\nThese two terms are closely related. Neural Networks\tDeep Learning\nModels inspired by biological neurons\tUses neural networks with multiple layers\nCan have one or more hidden layers\tUsually has many layers\nCan solve simpler problems\tCan learn complex patterns\nMay require less computational power\tOften requires more computational power"
+    },
+    {
+      "id": "psg_mvxutfuy_gcdc1ag",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 44,
+      "text": "Important: Deep learning is a subset of machine learning, and neural networks are its primary building blocks."
+    },
+    {
+      "id": "psg_mvxutfuy_41frwgc",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 45,
+      "text": "9. Libraries Used to Build Neural Networks\nIf you want to implement neural networks, these are important libraries:\nLibrary\tPurpose\nNumPy\tMathematical operations\nTensorFlow\tBuilding and training neural networks\nPyTorch\tBuilding and training deep learning models\nKeras\tHigh-level neural network API\nScikit-learn\tTraditional machine learning"
+    },
+    {
+      "id": "psg_mvxutfuy_3ustdnb",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 46,
+      "text": "I recommend learning PyTorch for implementing neural networks and understanding how they work internally."
+    },
+    {
+      "id": "psg_mvxutfuy_5r9u7ph",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 47,
+      "text": "10. What Should You Learn Next? For a strong foundation in AI/ML engineering, I recommend following this sequence:\n1. Neural Network fundamentals\n2."
+    },
+    {
+      "id": "psg_mvxutfuy_92b7o3f",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 48,
+      "text": "Perceptron and Multi-Layer Perceptron (MLP)\n3. Forward Propagation (numerical examples)\n4. Loss Functions\n5. Gradient Descent and Optimization\n6."
+    },
+    {
+      "id": "psg_mvxutfuy_p1u2epy",
+      "source_id": "src_mvxutfuu_s52ru0f",
+      "position": 49,
+      "text": "Backpropagation (mathematical understanding)\n7. Overfitting, Underfitting and Regularization\n8. Implement an MLP using PyTorch\n9. CNN, RNN, LSTM and Transformers\nMy recommendation: Don't jump directly into CNNs or Transformers. First understand how a single neuron works, how weights are updated, and how backpropagation works. These concepts will make advanced architectures much easier."
+    },
+    {
+      "id": "psg_mvyzk6h9_gtfa3gh",
+      "source_id": "src_mvyzk6h6_3owy2kf",
+      "position": 1,
+      "text": "Active recall strengthens synapses."
+    },
+    {
+      "id": "psg_mvyzk6hi_e8qxo0k",
+      "source_id": "src_mvyzk6hg_62es0ed",
+      "position": 1,
+      "text": "Quantum entanglement occurs when pairs of particles interact."
+    },
+    {
+      "id": "psg_mvz022ff_mhbf5b1",
+      "source_id": "src_mvz022fc_tl4rom6",
+      "position": 1,
+      "text": "Active recall strengthens synapses."
+    },
+    {
+      "id": "psg_mvz022fp_6nj1x84",
+      "source_id": "src_mvz022fk_vfzuxh6",
+      "position": 1,
+      "text": "Quantum entanglement occurs when pairs of particles interact."
+    }
+  ],
+  "cards": [
+    {
+      "owner_id": "usr_mvz022fv_pcahtwa",
+      "passage_id": "psg_mvz022fp_6nj1x84",
+      "type": "concept",
+      "front": "What is quantum entanglement?",
+      "back": "It occurs when pairs of particles interact.",
+      "quote": "Quantum entanglement occurs when pairs of particles interact.",
+      "status": "draft",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 0,
+      "id": "crd_mvz022fr_2eynw4t",
+      "created_at": "2026-11-02T08:31:15.159Z",
+      "approved_at": null
+    },
+    {
+      "owner_id": "browser_session_alpha_1793608275144",
+      "passage_id": "psg_mvz022ff_mhbf5b1",
+      "type": "concept",
+      "front": "What does active recall strengthen?",
+      "back": "It strengthens synapses.",
+      "quote": "Active recall strengthens synapses.",
+      "status": "discarded",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 0,
+      "id": "crd_mvz022fg_1of0d93",
+      "created_at": "2026-11-02T08:31:15.148Z",
+      "approved_at": "2026-11-02T08:31:15.149Z"
+    },
+    {
+      "owner_id": "usr_mvyzk6hk_jnyylev",
+      "passage_id": "psg_mvyzk6hi_e8qxo0k",
+      "type": "concept",
+      "front": "What is quantum entanglement?",
+      "back": "It occurs when pairs of particles interact.",
+      "quote": "Quantum entanglement occurs when pairs of particles interact.",
+      "status": "draft",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 0,
+      "id": "crd_mvyzk6hj_9kj1m6a",
+      "created_at": "2026-11-02T08:17:20.599Z",
+      "approved_at": null
+    },
+    {
+      "owner_id": "browser_session_alpha_1793607440586",
+      "passage_id": "psg_mvyzk6h9_gtfa3gh",
+      "type": "concept",
+      "front": "What does active recall strengthen?",
+      "back": "It strengthens synapses.",
+      "quote": "Active recall strengthens synapses.",
+      "status": "discarded",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 0,
+      "id": "crd_mvyzk6hb_lmfjuhh",
+      "created_at": "2026-11-02T08:17:20.591Z",
+      "approved_at": "2026-11-02T08:17:20.593Z"
+    },
+    {
+      "owner_id": "user_mvxukzll_f7s9a4uuxpbe6000",
+      "passage_id": "psg_mvxutbsx_43838zw",
+      "type": "term",
+      "front": "What is This?",
+      "back": "This is one of the most important concepts",
+      "quote": "This is one of the most important concepts.",
+      "status": "approved",
+      "edited": false,
+      "times_correct": 1,
+      "times_wrong": 0,
+      "id": "crd_mvxutbzi_63kk52s",
+      "created_at": "2026-11-01T13:16:43.374Z",
+      "approved_at": "2026-11-01T13:18:12.864Z"
+    },
+    {
+      "owner_id": "user_mvxukzll_f7s9a4uuxpbe6000",
+      "passage_id": "psg_mvxutbsx_77dc88k",
+      "type": "term",
+      "front": "What is A neuron?",
+      "back": "A neuron is the basic computational unit of a neural network",
+      "quote": "A neuron is the basic computational unit of a neural network.",
+      "status": "draft",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 0,
+      "id": "crd_mvxutbvu_2a3mt5i",
+      "created_at": "2026-11-01T13:16:43.242Z",
+      "approved_at": null
+    },
+    {
+      "owner_id": "user_mvxukzll_f7s9a4uuxpbe6000",
+      "passage_id": "psg_mvxutbsx_vjg8hcf",
+      "type": "term",
+      "front": "What is This learning process?",
+      "back": "This learning process is performed using a neural network",
+      "quote": "This learning process is performed using a neural network.",
+      "status": "approved",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 1,
+      "id": "crd_mvxutbv7_sked9hh",
+      "created_at": "2026-11-01T13:16:43.219Z",
+      "approved_at": "2026-11-01T13:18:10.549Z"
+    },
+    {
+      "owner_id": "user_mvxukzll_f7s9a4uuxpbe6000",
+      "passage_id": "psg_mvxutbsx_987snd2",
+      "type": "process",
+      "front": "How does the process of you provide a new image work?",
+      "back": "it predicts whether the image contains a cat or a dog.",
+      "quote": "After training, when you provide a new image, it predicts whether the image contains a cat or a dog.",
+      "status": "approved",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 1,
+      "id": "crd_mvxutbup_uvxpi0i",
+      "created_at": "2026-11-01T13:16:43.201Z",
+      "approved_at": "2026-11-01T13:18:08.453Z"
+    },
+    {
+      "owner_id": "user_mvxukzll_f7s9a4uuxpbe6000",
+      "passage_id": "psg_mvxutbsx_41n4muw",
+      "type": "term",
+      "front": "What is What?",
+      "back": "What is a Neural Network?",
+      "quote": "What is a Neural Network?",
+      "status": "draft",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 0,
+      "id": "crd_mvxutbu0_1vicv9p",
+      "created_at": "2026-11-01T13:16:43.176Z",
+      "approved_at": null
+    },
+    {
+      "owner_id": "user_mvxukzll_f7s9a4uuxpbe6000",
+      "passage_id": "psg_mvxutbsx_7lgdnhv",
+      "type": "question",
+      "front": "According to the text, what key fact is stated about this topic?",
+      "back": "A Neural Network (NN) is a machine learning model inspired by how the human brain works.",
+      "quote": "A Neural Network (NN) is a machine learning model inspired by how the human brain works.",
+      "status": "approved",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 1,
+      "id": "crd_mvxutbtm_39delec",
+      "created_at": "2026-11-01T13:16:43.162Z",
+      "approved_at": "2026-11-01T13:18:16.816Z"
+    },
+    {
+      "owner_id": "browser_session_alpha_1793538572698",
+      "passage_id": "psg_mvxuk3od_uyu8tdo",
+      "type": "concept",
+      "front": "What does active recall strengthen?",
+      "back": "It strengthens synapses.",
+      "quote": "Active recall strengthens synapses.",
+      "status": "discarded",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 0,
+      "id": "crd_mvxuk3oe_nxu1gdt",
+      "created_at": "2026-11-01T13:09:32.702Z",
+      "approved_at": "2026-11-01T13:09:32.704Z"
+    },
+    {
+      "owner_id": "test_owner_suite_1",
+      "passage_id": "psg_mvxufbif_zqs3plg",
+      "type": "term",
+      "front": "What is Active recall?",
+      "back": "Active recall is a learning principle where the learner deliberately retrieves information from memory rather than passively re-reading it",
+      "quote": "Active recall is a learning principle where the learner deliberately retrieves information from memory rather than passively re-reading it.",
+      "status": "approved",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 0,
+      "id": "crd_mvxufbiq_xwvpdfy",
+      "created_at": "2026-11-01T13:05:49.586Z",
+      "approved_at": "2026-11-01T13:05:49.596Z"
+    },
+    {
+      "owner_id": "test_owner_suite_1",
+      "passage_id": "psg_mvxufbif_zqs3plg",
+      "type": "term",
+      "front": "What is When a concept?",
+      "back": "When a concept is actively retrieved, the neural pathways associated with that memory trace are reinforced through synaptic plasticity",
+      "quote": "When a concept is actively retrieved, the neural pathways associated with that memory trace are reinforced through synaptic plasticity.",
+      "status": "draft",
+      "edited": false,
+      "times_correct": 0,
+      "times_wrong": 0,
+      "id": "crd_mvxufbiq_yafme6b",
+      "created_at": "2026-11-01T13:05:49.586Z",
+      "approved_at": null
+    }
+  ],
+  "users": [
+    {
+      "id": "usr_mvyzk6hk_jnyylev",
+      "email": "student_1793607440600@quietstudy.internal",
+      "password_hash": "hashed_secret_test_pw",
+      "name": "Marie Curie",
+      "created_at": "2026-11-02T08:17:20.600Z"
+    },
+    {
+      "id": "usr_mvyzpaph_q014ijx",
+      "email": "demo_user@example.com",
+      "password_hash": "$2b$10$Ky3nTkMGyFzunxZptJfANu4rwZkVCCaLTkcBJIpXQNC7HKjL7/gv2",
+      "name": "Demo Student",
+      "created_at": "2026-11-02T08:21:19.349Z"
+    },
+    {
+      "id": "usr_mvz022fv_pcahtwa",
+      "email": "student_1793608275162@quietstudy.internal",
+      "password_hash": "hashed_secret_test_pw",
+      "name": "Marie Curie",
+      "created_at": "2026-11-02T08:31:15.163Z"
+    }
+  ]
+}
